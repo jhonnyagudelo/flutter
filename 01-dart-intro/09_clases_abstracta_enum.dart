@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 void main() {
   final windPlant = WindPlant(initialEnergy: 100);
   final nuclearPlant = WindPlant(initialEnergy: 1000);

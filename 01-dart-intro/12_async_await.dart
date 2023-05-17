@@ -1,14 +1,16 @@
-void main() {
+void main() async {
   print('Inicio del programa');
-  httpGet('https://curso').then((value) {
+  try {
+    final value = await httpGet('https://curso');
     print(value);
-  }).catchError((err) {
-    print('Error $err');
-  });
+  } catch (e) {
+    print('Tenemos un error: $e');
+  }
+
   print('Fin del programa');
 }
 
 Future<String> httpGet(String url) async {
   await Future.delayed(const Duration(seconds: 1));
-  return 'Tenemos un valor de la peticion http';
+  throw 'Error en la peticion';
 }
